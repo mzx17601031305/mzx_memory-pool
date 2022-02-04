@@ -14,3 +14,5 @@ class User():
 user = User(0)
 user.age = 5
 print(user.age)
+#deb https://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+#deb-src https://mirrors.aliyun.com/kali kali-rolling main non-free contrib

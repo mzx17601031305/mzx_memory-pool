@@ -1,0 +1,47 @@
+diff -uNr tar-1.29.orig/THANKS tar-1.29/THANKS
+--- tar-1.29.orig/THANKS	2016-03-24 01:29:55.000000000 -0400
++++ tar-1.29/THANKS	2017-08-13 09:33:19.000000000 -0400
+@@ -94,6 +94,7 @@
+ Christian T. Dum	ctd@mpe-garching.mpg.de
+ Christian von Roques	roques@pond.sub.org
+ Christian Wetzel	wetzel@phoenix-pacs.de
++Christian Weisgerber	christophe.kalt@kbcfp.com
+ Christoph Litauer	litauer@mailhost.uni-koblenz.de
+ Christophe Colle	colle@krtkg1.rug.ac.be
+ Christophe Kalt		Christophe.Kalt@kbcfp.com
+diff -uNr tar-1.29.orig/gnu/vasnprintf.c tar-1.29/gnu/vasnprintf.c
+--- tar-1.29.orig/gnu/vasnprintf.c	2015-08-24 06:08:26.000000000 -0400
++++ tar-1.29/gnu/vasnprintf.c	2017-08-13 09:32:52.000000000 -0400
+@@ -4858,7 +4858,7 @@
+ #endif
+                   *fbp = dp->conversion;
+ #if USE_SNPRINTF
+-# if !(((__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 3)) && !defined __UCLIBC__) || ((defined _WIN32 || defined __WIN32__) && ! defined __CYGWIN__))
++# if !defined(__APPLE__) && !(((__GLIBC__ > 2 || (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 3)) && !defined __UCLIBC__) || ((defined _WIN32 || defined __WIN32__) && ! defined __CYGWIN__))
+                 fbp[1] = '%';
+                 fbp[2] = 'n';
+                 fbp[3] = '\0';
+diff -uNr tar-1.29.orig/tests/numeric.at tar-1.29/tests/numeric.at
+--- tar-1.29.orig/tests/numeric.at	2016-03-18 13:23:55.000000000 -0400
++++ tar-1.29/tests/numeric.at	2017-08-13 09:33:19.000000000 -0400
+@@ -27,14 +27,17 @@
+ ])
+ 
+ AT_TAR_CHECK([
+-mkdir dir
+-genfile --file dir/file
+-
+ MYUID=$(id -u) || AT_SKIP_TEST
+ MYGID=$(id -g) || AT_SKIP_TEST
+ MYUSR=$(id -un) || AT_SKIP_TEST
+ MYGRP=$(id -gn) || AT_SKIP_TEST
+ 
++mkdir dir
++# Ensure correct group id on BSDs.
++chown :$MYGID dir >/dev/null 2>/dev/null
++genfile --file dir/file
++
++
+ TESTOP([--create])
+ TESTOP([--list])
+ TESTOP([--diff])
