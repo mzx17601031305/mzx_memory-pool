@@ -1,0 +1,10 @@
+Instructions:
+
+1. Replace SolarWinds.Licensing.Framework.dll in the Main Directory。（安装完成后，将SolarWinds.Licensing.Framework.dll文件复制到程序安装目录下并覆盖原文件。）
+2. After Run KiwiSyslogLicensor Select Offline Registration Then Use Our Keygen To generate Valid Keyfile。（打开KiwiSyslog Console，打开注册选项，选择离线导入，同时打开注册机，生成lic文件并导入，完成。做这一步之前先停止相关服务）
+
+
+Enjoy Another Awsome Release From REPT
+
+
+Reverse Engineering Passion Team 2014

@@ -1,0 +1,90 @@
+{
+    "auto_close": true,
+    "auto_open": false,
+    "auto_start": false,
+    "drawing_grid_size": 25,
+    "grid_size": 75,
+    "name": "GNS3",
+    "project_id": "eba6e729-d825-4c1d-b52e-3e929a40cd98",
+    "revision": 9,
+    "scene_height": 1000,
+    "scene_width": 2000,
+    "show_grid": false,
+    "show_interface_labels": false,
+    "show_layers": false,
+    "snap_to_grid": false,
+    "supplier": null,
+    "topology": {
+        "computes": [],
+        "drawings": [],
+        "links": [],
+        "nodes": [
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": null,
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 48,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "ATMSW1",
+                    "x": -1,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "ATMSW1",
+                "node_id": "79c5c4ca-a4c8-4a8c-8260-996dd9912366",
+                "node_type": "atm_switch",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "mappings": {}
+                },
+                "symbol": ":/symbols/atm_switch.svg",
+                "template_id": "aaa764e2-b383-300f-8a0e-3493bbfdb7d2",
+                "width": 51,
+                "x": -157,
+                "y": -67,
+                "z": 2
+            },
+            {
+                "compute_id": "local",
+                "console": null,
+                "console_auto_start": false,
+                "console_type": null,
+                "custom_adapters": [],
+                "first_port_name": null,
+                "height": 48,
+                "label": {
+                    "rotation": 0,
+                    "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
+                    "text": "ATMSW2",
+                    "x": -1,
+                    "y": -25
+                },
+                "locked": false,
+                "name": "ATMSW2",
+                "node_id": "a4602740-73f1-47a2-a134-ae8e3f112845",
+                "node_type": "atm_switch",
+                "port_name_format": "Ethernet{0}",
+                "port_segment_size": 0,
+                "properties": {
+                    "mappings": {}
+                },
+                "symbol": ":/symbols/atm_switch.svg",
+                "template_id": "aaa764e2-b383-300f-8a0e-3493bbfdb7d2",
+                "width": 51,
+                "x": 1,
+                "y": -75,
+                "z": 1
+            }
+        ]
+    },
+    "type": "topology",
+    "variables": null,
+    "version": "2.2.28",
+    "zoom": 100
+}
